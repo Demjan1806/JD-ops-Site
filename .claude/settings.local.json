@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:www.infrastructureinnovators.nl)",
+      "Bash(npm install *)"
+    ]
+  }
+}
