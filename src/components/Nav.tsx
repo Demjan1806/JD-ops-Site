@@ -19,21 +19,21 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-950/98 backdrop-blur-sm border-white/10"
-          : "bg-gray-950 border-white/10"
+          ? "bg-gray-950/98 backdrop-blur-sm"
+          : "bg-gray-950"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
+        <a href="#" className="flex items-center gap-4">
           <img
             src="https://jdo-jb.github.io/jdo-site/JDO-logo.png"
             alt="JDO"
-            className="h-10 w-10 rounded-full object-cover"
+            className="h-16 w-16 rounded-full object-cover ring-2 ring-lime-500/30 shadow-lg shadow-blue-900/40"
           />
-          <div className="flex flex-col leading-none gap-0.5">
-            <span className="text-white font-bold text-2xl tracking-tight">
+          <div className="flex flex-col leading-none gap-1">
+            <span className="text-white font-bold text-3xl tracking-tight">
               JD-<span className="text-lime-400">Ops</span>
             </span>
             <span className="font-mono text-gray-500 text-xs tracking-widest uppercase">
@@ -47,13 +47,19 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
+              className="text-sm text-gray-400 hover:text-lime-400 transition-colors tracking-wide"
             >
               {link.label}
             </a>
           ))}
         </div>
       </div>
+
+      {/* gradient bottom border */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(90deg, #3b82f6, #14b8a6 50%, #a3e635)" }}
+      />
     </nav>
   );
 }

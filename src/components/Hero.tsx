@@ -2,7 +2,7 @@ const activeNetworks = ["Solana", "Avalanche", "Monad", "Harmony"];
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-gray-950 relative overflow-hidden pt-28">
+    <section className="min-h-screen flex items-center bg-gray-950 relative overflow-hidden pt-36">
       {/* dot grid */}
       <div
         className="absolute inset-0 opacity-40"
@@ -13,9 +13,9 @@ export default function Hero() {
         }}
       />
       {/* blue glow */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-150 h-150 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
       {/* lime glow */}
-      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-lime-500/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-1/6 w-125 h-125 bg-lime-500/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 py-24 relative z-10 w-full">
         <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6">
