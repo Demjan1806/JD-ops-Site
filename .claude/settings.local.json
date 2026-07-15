@@ -6,6 +6,9 @@
       "WebFetch(domain:www.infrastructureinnovators.nl)",
       "Bash(npm install *)",
       "WebFetch(domain:jdo-jb.github.io)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Demian\\.claude\\projects\\c--Users-Demian-jd-ops\\95bf366e-e028-4432-933e-e50998eab5eb\\tool-results"
     ]
   }
 }

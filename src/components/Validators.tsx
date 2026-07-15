@@ -1,39 +1,47 @@
+"use client";
+
+import { useState } from "react";
+
 const validators = [
   {
     name: "Solana",
     type: "Layer 1",
-    networks: ["mainnet", "testnet"],
+    networks: ["mainnet"],
     status: "OPERATIONAL",
-    description:
-      "High-performance L1 with sub-second finality and 65,000+ TPS capacity. We run redundant validators on both the main network and the Solana testnet.",
+    description: "Run directly after Tour de SOL (Solana testnet).",
     detail: "Redundant infrastructure · MEV-aware configuration",
+    key: "9q16BB7WGmBxf1nJTdxH5zPnBUhtHqdqXqRFjSjuM4k7",
+    keyLabel: "Identity Key",
+  },
+  {
+    name: "Solana",
+    type: "Layer 1",
+    networks: ["testnet"],
+    status: "OPERATIONAL",
+    description: "Long-running testnet validator from the early Tour de SOL testnet.",
+    detail: "Testnet since genesis · Tour de SOL veteran",
+    key: "hQBS6cu8RHkXcCzE6N8mQxhgrtbNy4kivoRjTMzF2cA",
+    keyLabel: "Identity Key",
   },
   {
     name: "Avalanche",
     type: "Layer 1",
     networks: ["mainnet"],
     status: "OPERATIONAL",
-    description:
-      "Multi-chain platform with custom subnet support and EVM compatibility. Our Avalanche validator maintains consistent uptime on the primary C-Chain network.",
+    description: "Multi-chain platform with custom subnet support and EVM compatibility. Our Avalanche validator maintains consistent uptime on the primary C-Chain network.",
     detail: "Primary network · C-Chain validator",
-  },
-  {
-    name: "Monad",
-    type: "Layer 1",
-    networks: ["testnet"],
-    status: "ACTIVE",
-    description:
-      "High-throughput EVM-compatible L1 with parallel execution. We are running validators on the Monad testnet in preparation for mainnet launch.",
-    detail: "Early validator · testnet since genesis",
+    key: "NodeID-B39dR3Zj4ZtiqSHTPLxck66yqxTZ9pRmK",
+    keyLabel: "Node ID",
   },
   {
     name: "Harmony",
     type: "Layer 1",
     networks: ["mainnet"],
     status: "OPERATIONAL",
-    description:
-      "Sharded L1 focused on decentralisation and fast cross-shard transactions. Our Harmony node has been live since the network's early days.",
+    description: "Sharded L1 focused on decentralisation and fast cross-shard transactions. Our Harmony node has been live since the network's early days.",
     detail: "Shard validator · multi-year track record",
+    key: "one1ktksx4t8t6grdllrf8vv78pj8pc6fwggvjhqzq",
+    keyLabel: "ONE Address",
   },
 ];
 
@@ -46,6 +54,34 @@ const statusColor: Record<string, string> = {
   OPERATIONAL: "text-green-400",
   ACTIVE: "text-blue-400",
 };
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="shrink-0 text-gray-500 hover:text-lime-400 transition-colors"
+      title="Copy key"
+    >
+      {copied ? (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
 
 export default function Validators() {
   return (
@@ -65,9 +101,9 @@ export default function Validators() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {validators.map((v) => (
+          {validators.map((v, i) => (
             <div
-              key={v.name}
+              key={`${v.name}-${i}`}
               className="bg-gray-900 border border-white/10 rounded-xl overflow-hidden hover:border-lime-500/20 transition-colors flex flex-col"
             >
               {/* card header */}
@@ -102,6 +138,21 @@ export default function Validators() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   {v.description}
                 </p>
+
+                {v.key && (
+                  <div className="mb-4">
+                    <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-2">
+                      {v.keyLabel}
+                    </p>
+                    <div className="flex items-center gap-2 bg-gray-950/60 border border-white/5 rounded-lg px-3 py-2">
+                      <span className="font-mono text-xs text-gray-400 truncate flex-1">
+                        {v.key}
+                      </span>
+                      <CopyButton text={v.key} />
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex items-center gap-2 mt-auto">
                   <span className="text-lime-500/60">◆</span>
                   <span className="font-mono text-xs text-gray-500">{v.detail}</span>

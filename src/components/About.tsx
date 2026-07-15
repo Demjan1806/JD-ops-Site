@@ -8,11 +8,12 @@ export default function About() {
   return (
     <section id="about" className="bg-gray-900 py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-8">
+          About JD-Ops
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-16 items-stretch">
           <div>
-            <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-3">
-              About JD-Ops
-            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Serious about operations.
             </h2>
@@ -29,7 +30,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="flex flex-col justify-between">
             {values.map((value) => (
               <div
                 key={value.title}
