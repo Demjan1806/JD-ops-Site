@@ -26,13 +26,20 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="flex flex-col leading-none gap-0.5">
-          <span className="text-white font-bold text-2xl tracking-tight">
-            JD-<span className="text-blue-500">Ops</span>
-          </span>
-          <span className="font-mono text-gray-500 text-xs tracking-widest uppercase">
-            Validator Infrastructure
-          </span>
+        <a href="#" className="flex items-center gap-3">
+          <img
+            src="https://jdo-jb.github.io/jdo-site/JDO-logo.png"
+            alt="JDO"
+            className="h-10 w-10 rounded-full object-cover"
+          />
+          <div className="flex flex-col leading-none gap-0.5">
+            <span className="text-white font-bold text-2xl tracking-tight">
+              JD-<span className="text-lime-400">Ops</span>
+            </span>
+            <span className="font-mono text-gray-500 text-xs tracking-widest uppercase">
+              Validator Infrastructure
+            </span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-10">

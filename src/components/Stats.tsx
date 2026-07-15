@@ -14,7 +14,7 @@ export default function Stats() {
               key={stat.label}
               className={`py-8 sm:py-0 sm:px-8 ${i === 0 ? "sm:pl-0" : ""} ${i === stats.length - 1 ? "sm:pr-0" : ""}`}
             >
-              <div className="w-8 h-px bg-blue-500 mb-4" />
+              <div className="w-8 h-px mb-4" style={{ background: "linear-gradient(90deg, #3b82f6, #a3e635)" }} />
               <div className="text-4xl font-bold text-white mb-1">{stat.value}</div>
               <div className="text-sm font-medium text-gray-300 mb-1">{stat.label}</div>
               <div className="font-mono text-xs text-gray-500">{stat.sub}</div>

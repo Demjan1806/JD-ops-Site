@@ -68,7 +68,7 @@ export default function Validators() {
           {validators.map((v) => (
             <div
               key={v.name}
-              className="bg-gray-900 border border-white/10 rounded-xl overflow-hidden hover:border-blue-500/20 transition-colors flex flex-col"
+              className="bg-gray-900 border border-white/10 rounded-xl overflow-hidden hover:border-lime-500/20 transition-colors flex flex-col"
             >
               {/* card header */}
               <div className="px-8 pt-7 pb-5 border-b border-white/10">
@@ -103,7 +103,7 @@ export default function Validators() {
                   {v.description}
                 </p>
                 <div className="flex items-center gap-2 mt-auto">
-                  <span className="text-blue-500/60">◆</span>
+                  <span className="text-lime-500/60">◆</span>
                   <span className="font-mono text-xs text-gray-500">{v.detail}</span>
                 </div>
               </div>

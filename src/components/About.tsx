@@ -33,7 +33,7 @@ export default function About() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="border-l-2 border-blue-500/40 pl-6"
+                className="border-l-2 border-lime-500/40 pl-6"
               >
                 <h3 className="text-white font-semibold mb-1">{value.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">

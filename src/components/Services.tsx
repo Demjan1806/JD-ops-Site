@@ -58,9 +58,9 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-gray-900 border border-white/10 rounded-xl p-8 hover:border-blue-500/30 transition-colors group"
+              className="bg-gray-900 border border-white/10 rounded-xl p-8 hover:border-lime-500/30 transition-colors group"
             >
-              <div className="text-blue-400 mb-4 group-hover:text-blue-300 transition-colors">
+              <div className="text-lime-400 mb-4 group-hover:text-lime-300 transition-colors">
                 {service.icon}
               </div>
               <h3 className="text-lg font-semibold text-white mb-3">

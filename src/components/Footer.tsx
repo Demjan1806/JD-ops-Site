@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <a href="#" className="flex items-center gap-2">
 <span className="text-white font-bold text-lg tracking-tight">
-            JD-<span className="text-blue-500">Ops</span>
+            JD-<span className="text-lime-400">Ops</span>
           </span>
         </a>
 

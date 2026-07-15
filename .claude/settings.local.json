@@ -4,7 +4,8 @@
       "Bash(npm run *)",
       "Bash(npx tsc *)",
       "WebFetch(domain:www.infrastructureinnovators.nl)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "WebFetch(domain:jdo-jb.github.io)"
     ]
   }
 }
