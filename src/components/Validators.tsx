@@ -135,27 +135,29 @@ export default function Validators() {
 
               {/* card body */}
               <div className="px-8 py-5 flex flex-col flex-1">
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-gray-400 text-sm leading-relaxed">
                   {v.description}
                 </p>
 
-                {v.key && (
-                  <div className="mb-4">
-                    <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-2">
-                      {v.keyLabel}
-                    </p>
-                    <div className="flex items-center gap-2 bg-gray-950/60 border border-white/5 rounded-lg px-3 py-2">
-                      <span className="font-mono text-xs text-gray-400 truncate flex-1">
-                        {v.key}
-                      </span>
-                      <CopyButton text={v.key} />
+                <div className="mt-auto pt-4">
+                  {v.key && (
+                    <div className="mb-3">
+                      <p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-2">
+                        {v.keyLabel}
+                      </p>
+                      <div className="flex items-center gap-2 bg-gray-950/60 border border-white/5 rounded-lg px-3 py-2">
+                        <span className="font-mono text-xs text-gray-400 truncate flex-1">
+                          {v.key}
+                        </span>
+                        <CopyButton text={v.key} />
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                <div className="flex items-center gap-2 mt-auto">
-                  <span className="text-lime-500/60">◆</span>
-                  <span className="font-mono text-xs text-gray-500">{v.detail}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lime-500/60">◆</span>
+                    <span className="font-mono text-xs text-gray-500">{v.detail}</span>
+                  </div>
                 </div>
               </div>
             </div>
