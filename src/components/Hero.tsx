@@ -1,4 +1,4 @@
-const activeNetworks = ["Solana", "Avalanche", "Monad", "Harmony"];
+const activeNetworks = ["Solana", "Avalanche", "Harmony"];
 
 export default function Hero() {
   return (
