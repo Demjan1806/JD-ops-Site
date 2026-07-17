@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Validators from "@/components/Validators";
+import StakingSection from "@/components/StakingSection";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Validators />
+        <StakingSection />
         <Services />
         <About />
       </main>
